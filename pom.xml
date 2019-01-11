@@ -22,6 +22,19 @@
 
   <build>
     <finalName>tic-tac-toe</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <source>${maven.compile.source}</source>
+          <target>${maven.compile.target}</target>
+          <showWarnings>true</showWarnings>
+          <useIncrementalCompilation>false</useIncrementalCompilation><!-- see MCOMPILER-209 -->
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
   <dependencies>
