@@ -4,13 +4,55 @@
         xmlns:tc="http://myfaces.apache.org/tobago/component">
 
   <tc:page>
-    <tc:messages />
-    <tc:box label="Tic-Tac-Toe">
-      <tc:in label="Name" value="#{game.name}" required="true">
-        <f:facet name="after">
-          <tc:button label="Submit" defaultCommand="true" action="#{game.sayHello}"/>
-        </f:facet>
-      </tc:in>
+    <tc:messages/>
+    <tc:box label="Tic-Tac-Toe" id="field">
+
+      <tc:button label="0" action="#{game.move(0)}">
+        <f:ajax render="field"/>
+      </tc:button>
+      <tc:button label="1" action="#{game.move(1)}">
+        <f:ajax render="field"/>
+      </tc:button>
+      <tc:button label="2" action="#{game.move(2)}">
+        <f:ajax render="field"/>
+      </tc:button>
+
+      <br/>
+
+      <tc:button label="3" action="#{game.move(3)}">
+        <f:ajax render="field"/>
+      </tc:button>
+      <tc:button label="4" action="#{game.move(4)}">
+        <f:ajax render="field"/>
+      </tc:button>
+      <tc:button label="5" action="#{game.move(5)}">
+        <f:ajax render="field"/>
+      </tc:button>
+
+      <br/>
+
+      <tc:button label="6" action="#{game.move(6)}">
+        <f:ajax render="field"/>
+      </tc:button>
+      <tc:button label="7" action="#{game.move(7)}">
+        <f:ajax render="field"/>
+      </tc:button>
+      <tc:button label="8" action="#{game.move(8)}">
+        <f:ajax render="field"/>
+      </tc:button>
+
+
+      <br/>
+
+      <tc:button label="error" action="#{game.move(9)}">
+        <f:ajax render="field"/>
+      </tc:button>
+
+
+      <br/>
+
+
+      <tc:out label="last move" value="#{game.lastMove}"/>
     </tc:box>
   </tc:page>
 
