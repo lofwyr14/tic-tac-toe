@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- XXX Schema is NOT official from logback -->
+<configuration
+    xmlns="http://ch.qos.logback/xml/ns/logback"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback https://raw.github.com/enricopulatzo/logback-XSD/master/src/main/xsd/logback.xsd">
+
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%date{ISO8601} [%-16.16thread] %-5level %-50.50logger{50}:%-20.20method:%-4.4line [%mdc] %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="eu.irian.demo" level="debug"/>
+
+  <root level="info">
+    <appender-ref ref="console"/>
+  </root>
+</configuration>
