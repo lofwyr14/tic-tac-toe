@@ -16,4 +16,10 @@
     </locale-config>
   </application>
 
+  <factory>
+    <exception-handler-factory>
+      eu.irian.demo.tictactoe.util.TobagoExceptionHandlerFactory
+    </exception-handler-factory>
+  </factory>
+
 </faces-config>

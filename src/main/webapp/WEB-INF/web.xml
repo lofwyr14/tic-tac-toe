@@ -33,7 +33,7 @@
 
   <!-- The Usual Welcome File List -->
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>tic-tac-toe.xhtml</welcome-file>
   </welcome-file-list>
 
   <session-config>
