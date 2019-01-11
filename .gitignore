@@ -6,7 +6,19 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-.mvn/timing.properties
-
-# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
-!/.mvn/wrapper/maven-wrapper.jar
+.idea/
+.mvn/
+*.iml
+*.ipr
+*.iws
+.checkstyle
+.classpath
+.DS_Store
+.pmd
+.eclipse-pmd
+.project
+.ruleset
+.settings/
+*.log
+bin/
+node_modules/
