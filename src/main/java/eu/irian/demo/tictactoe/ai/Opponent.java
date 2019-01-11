@@ -7,13 +7,6 @@ import java.util.List;
 @Singleton
 public class Opponent implements MoveService {
 
-//  public static void main(String[] args) {
-//    char[]field = {'X', ' ', ' ' , 'O' , ' ' , 'X', 'O', 'X'};
-//    Opponent oponent = new Opponent();
-//    System.out.println(oponent.move(field));
-//  }
-
-
   @Override
   public int move(char[] field){
 
