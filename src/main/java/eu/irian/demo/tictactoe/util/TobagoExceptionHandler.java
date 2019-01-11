@@ -82,7 +82,7 @@ public class TobagoExceptionHandler extends ExceptionHandlerWrapper {
             LOG.warn("Handling 500 exception.", cause);
           }
           facesContext.addMessage(null, message);
-          final String viewId = "/tobago/error.xhtml";
+          final String viewId = "/error.xhtml";
 
           // when the rendering was not yet started, we can forward to an error page
           if (event.getContext().getPhaseId().getOrdinal() < PhaseId.RENDER_RESPONSE.getOrdinal()) {

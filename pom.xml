@@ -18,6 +18,7 @@
     <maven.compile.encoding>UTF-8</maven.compile.encoding>
     <myfaces.version>2.0.24</myfaces.version>
     <openwebbeans.version>2.0.9</openwebbeans.version>
+    <logback.version>1.2.3</logback.version>
   </properties>
 
   <build>
@@ -42,6 +43,16 @@
       <groupId>org.apache.myfaces.tobago</groupId>
       <artifactId>tobago-theme-scarborough</artifactId>
       <version>4.3.2</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
     </dependency>
     <!-- needed for mvn jetty:run -->
     <dependency>
