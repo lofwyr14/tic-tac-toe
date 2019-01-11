@@ -1,0 +1,25 @@
+.field button {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  max-width: 25%;
+  border-radius: 5px;
+  background-color: cadetblue;
+  font-size: 75px;
+}
+
+/*
+.player-1::after {
+  font-family: "FontAwesome";
+  content:"\f00d";
+}
+*/
+
+@media(max-width: 700px) {
+  .field button {
+    height: 80px;
+    width: 80px;
+    font-size: 40px;
+  }
+}
+
