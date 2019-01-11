@@ -47,7 +47,7 @@ public class Game implements Serializable {
       return "/tic-tac-toe.xhtml";
     }
     int oponentMove = moveService.move(field);
-    LOG.info("Oponent move: " + oponentMove);
+    LOG.info("Opponent move: " + oponentMove);
     field[oponentMove] = P2;
     if (isOver()) {
       LOG.info("Game over " + Arrays.toString(field));
