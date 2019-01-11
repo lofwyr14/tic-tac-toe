@@ -38,6 +38,10 @@
     </plugins>
   </build>
 
+  <modules>
+    <module>ai-opponent</module>
+  </modules>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.myfaces.tobago</groupId>
