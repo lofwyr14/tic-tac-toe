@@ -8,20 +8,19 @@ import java.util.List;
 public class Opponent implements MoveService {
 
   @Override
-  public int move(char[] field){
+  public int move(char[] field) {
 
     List<Integer> freeFields = new ArrayList<>();
-    for(int i = 0; i < field.length; i++){
-        if( ' ' == field[i]){
-          freeFields.add(i);
-        }
+    for (int i = 0; i < field.length; i++) {
+      if (' ' == field[i]) {
+        freeFields.add(i);
+      }
     }
-    if( freeFields.size() == 0){
+    if (freeFields.size() == 0) {
       return -1;
     } else {
-      return freeFields.get((int)(Math.random() * freeFields.size()));
+      return freeFields.get((int) (Math.random() * freeFields.size()));
     }
   }
-
 
 }

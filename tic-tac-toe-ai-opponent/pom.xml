@@ -8,7 +8,7 @@
   <artifactId>ai-opponent</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>AI Opponent for Tic-Tac-Toe game</name>
+  <name>Tic-Tac-Toe AI Opponent</name>
 
   <!-- start AI service with: mvn package jetty:run
        goto: http://localhost:8002/tictactoe/ai/nextMove?field=

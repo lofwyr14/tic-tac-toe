@@ -8,13 +8,6 @@
   font-size: 75px;
 }
 
-/*
-.player-1::after {
-  font-family: "FontAwesome";
-  content:"\f00d";
-}
-*/
-
 @media(max-width: 700px) {
   .field button {
     height: 80px;
