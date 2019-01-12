@@ -51,7 +51,6 @@ public class FieldResource {
 
   /**
    * To get an result go to http://localhost:8002/tictactoe/ai/nextMove?field=
-   * TODO: Add a meaningful pattern.
    */
   @GET
   @Path("/nextMove")
@@ -59,7 +58,7 @@ public class FieldResource {
       @Parameter(
           description = "Give current field, get next move",
           required = true,
-          schema = @Schema(pattern = "")
+          schema = @Schema(pattern = "[xo]{0,1}(,[xo]{0,1}){8}")
       )
       @QueryParam("field") String field) {
 
