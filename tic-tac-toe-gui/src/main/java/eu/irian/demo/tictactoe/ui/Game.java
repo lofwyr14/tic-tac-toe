@@ -32,22 +32,28 @@ public class Game implements Serializable {
   @Min(0) // todo: checker
   @Max(8) // todo: checker
   public String move(final int cell) {
-    LOG.info("Current move is '{}'", cell);
+    LOG.info("Users move is '{}'", cell);
     field.move(cell, Players.player1);
+    if (!field.isGameOver()) {
+      int opponentMove = moveService.move(field.serialize());
+      LOG.info("Opponents move is '{}'", opponentMove);
+      field.move(opponentMove, Players.player2);
+      message("Opponents last move was: " + field.coordsString(opponentMove));
+    }
     if (field.isGameOver()) {
       LOG.info("Game over " + field);
-      message("You are the winner!");
-      return "/tic-tac-toe.xhtml";
+      switch (field.getWinner()) {
+        case nobody:
+          message("It is a tie!");
+          break;
+        case player1:
+          message("You are the winner!");
+          break;
+        case player2:
+          message("Opponent is the winner!");
+          break;
+      }
     }
-    int opponentMove = moveService.move(field.serialize());
-    LOG.info("Opponent move: " + opponentMove);
-    field.move(opponentMove, Players.player2);
-    if (field.isGameOver()) {
-      LOG.info("Game over " + field);
-      message("Opponent is the winner!");
-      return "/tic-tac-toe.xhtml";
-    }
-    message("Opponents last move was: row=" + ((cell / 3) + 1) + " column=" + ((cell % 3) + 1));
 
     return "/tic-tac-toe.xhtml";
   }

@@ -9,7 +9,7 @@
     <tc:style file="/tic-tac-toe.css"/>
 
     <tc:messages/>
-    <tc:box label="Tic-Tac-Toe" >
+    <tc:box label="Tic-Tac-Toe">
       <f:facet name="bar">
         <tc:button image="fa-refresh" markup="primary" action="#{game.reset}"/>
       </f:facet>
@@ -19,10 +19,14 @@
           <tc:style customClass="field"/>
 
           <ui:repeat value="#{game.field.cells}" var="cell" varStatus="v">
-            <tc:button image="#{cell.owner.icon}" action="#{game.move(v.index)}" disabled="#{not cell.free || game.field.gameOver}">
-              <tc:style customClass="#{cell.owner.cssClass}"/>
+            <tc:button image="#{cell.owner.icon}" action="#{game.move(v.index)}"
+                         disabled="#{not cell.free || game.field.gameOver}">
+              <tc:style customClass="#{cell.owner.cssClass}" left=""/>
               <f:ajax render=":::page"/>
             </tc:button>
+            <f:verbatim rendered="#{v.index % 3 == 2}">
+              <br/>
+            </f:verbatim>
           </ui:repeat>
 
         </tc:panel>

@@ -29,6 +29,10 @@ public class Field {
     updateState();
   }
 
+  public String coordsString(final int cell)  {
+    return "row=" + ((cell / 3) + 1) + " column=" + ((cell % 3) + 1);
+  }
+
   private Players getPlayerOnTurn() {
     return move % 2 == 0 ? Players.player1 : Players.player2;
   }
@@ -43,7 +47,7 @@ public class Field {
 
   @Override
   public String toString() {
-    return Arrays.toString(cells);
+    return Arrays.toString(cells) + " winner=" + winner;
   }
 
   public char[] serialize() {
@@ -56,12 +60,15 @@ public class Field {
 
   private void updateState() {
 
+    // row 0,1,2
     for (int row = 0; row < 3; row++) {
-      if (equalsOwner(cells[row], cells[1 + row], cells[2 + row])) {
-        winner = cells[row].getOwner();
+      if (equalsOwner(cells[3 * row], cells[3 * row + 1], cells[3 * row + 2])) {
+        winner = cells[3 * row].getOwner();
         gameOver = true;
       }
     }
+
+    // column 0,1,2
     for (int col = 0; col < 3; col++) {
       if (equalsOwner(cells[col], cells[col + 3], cells[col + 6])) {
         winner = cells[col].getOwner();
@@ -69,19 +76,23 @@ public class Field {
       }
     }
 
+    // diagonal 1
     if (equalsOwner(cells[0], cells[4], cells[8])) {
       winner = cells[0].getOwner();
       gameOver = true;
     }
 
+    // diagonal 2
     if (equalsOwner(cells[2], cells[4], cells[6])) {
       winner = cells[2].getOwner();
       gameOver = true;
     }
 
-    if (!isMoveIsPossible()) {
-      winner = Players.nobody;
-      gameOver = true;
+    if (!gameOver) {
+      if (!isMoveIsPossible()) {
+        winner = Players.nobody;
+        gameOver = true;
+      }
     }
 
     move++;

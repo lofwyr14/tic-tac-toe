@@ -3,7 +3,7 @@
   height: 150px;
   margin: 10px;
   max-width: 25%;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: cadetblue;
   font-size: 75px;
 }
@@ -12,7 +12,21 @@
   .field button {
     height: 80px;
     width: 80px;
+    margin: 5px;
+    border-radius: 8px;
     font-size: 40px;
   }
+}
+
+.player1 {
+  background-color: #dc685a !important;
+}
+
+.player2 {
+  background-color: #ecaf4f !important;
+}
+
+.player1:disabled, .player2:disabled {
+  opacity: 1;
 }
 
