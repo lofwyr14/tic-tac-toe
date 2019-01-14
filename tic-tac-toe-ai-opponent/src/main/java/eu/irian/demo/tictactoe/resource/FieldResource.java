@@ -22,6 +22,8 @@ package eu.irian.demo.tictactoe.resource;
 import eu.irian.demo.tictactoe.model.Field;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -31,10 +33,15 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
+import java.lang.invoke.MethodHandles;
+import java.util.ArrayList;
+import java.util.List;
 
 @Path("/ai")
 @Produces({"application/json"})
 public class FieldResource {
+
+  private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
   @POST
   @Consumes("application/json")
@@ -50,7 +57,7 @@ public class FieldResource {
   }
 
   /**
-   * To get an result go to http://localhost:8002/tictactoe/ai/nextMove?field=
+   * To get an result go to http://localhost:8002/tictactoe/ai/nextMove?field=x o x oox
    */
   @GET
   @Path("/nextMove")
@@ -58,12 +65,25 @@ public class FieldResource {
       @Parameter(
           description = "Give current field, get next move",
           required = true,
-          schema = @Schema(pattern = "[xo]{0,1}(,[xo]{0,1}){8}")
+          // todo validation by annotations is not working yet
+          schema = @Schema(pattern = "[xo ]{9}")
       )
-      @QueryParam("field") String field) {
+      @QueryParam("field") String fieldString) {
 
-    //calculate next move
 
-    return 3;
+    LOG.info("field is '{}'", fieldString);
+
+    char[] field = fieldString.toCharArray();
+    List<Integer> freeFields = new ArrayList<>();
+    for (int i = 0; i < field.length; i++) {
+      if (' ' == field[i]) {
+        freeFields.add(i);
+      }
+    }
+    if (freeFields.size() == 0) {
+      return -1;
+    } else {
+      return freeFields.get((int) (Math.random() * freeFields.size()));
+    }
   }
 }

@@ -11,7 +11,7 @@
   <name>Tic-Tac-Toe AI Opponent</name>
 
   <!-- start AI service with: mvn package jetty:run
-       goto: http://localhost:8002/tictactoe/ai/nextMove?field=x,x,,,o,,,,
+       goto: http://localhost:8002/tictactoe/ai/nextMove?field=x oxo o x
    -->
 
   <properties>

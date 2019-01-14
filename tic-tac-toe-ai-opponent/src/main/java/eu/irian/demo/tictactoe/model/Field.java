@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "Field")
 public class Field {
-  private long id; //do we need this?
+  private long id; // XXX do we need this?
   private char[] field;
 
   @XmlElement(name = "field")
