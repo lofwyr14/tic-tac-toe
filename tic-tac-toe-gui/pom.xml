@@ -14,7 +14,7 @@
   <name>Tic-Tac-Toe GUI</name>
 
   <properties>
-    <myfaces.version>2.0.24</myfaces.version>
+    <myfaces.version>3.0.1</myfaces.version>
     <openwebbeans.version>2.0.26</openwebbeans.version>
   </properties>
 
