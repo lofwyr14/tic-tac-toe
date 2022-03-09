@@ -24,4 +24,4 @@ updates:
           - ">= 2.1.0"
       - dependency-name: "org.jboss.resteasy:*"
         versions:
-          - ">= 5.*"
+          - ">= 5.0.0.Final"
