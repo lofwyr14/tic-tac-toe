@@ -22,3 +22,6 @@ updates:
       - dependency-name: "org.apache.myfaces.core:*"
         versions:
           - ">= 2.1.0"
+      - dependency-name: "org.jboss.resteasy:*"
+        versions:
+          - ">= 5.*"
