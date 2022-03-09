@@ -19,3 +19,6 @@ updates:
       - dependency-name: "org.eclipse.jetty:jetty-maven-plugin"
         versions:
           - ">= 10.0.0"
+      - dependency-name: "org.apache.myfaces.core:*"
+        versions:
+          - ">= 2.1.0"
