@@ -15,7 +15,7 @@
 
   <properties>
     <myfaces.version>2.0.25</myfaces.version>
-    <openwebbeans.version>2.0.26</openwebbeans.version>
+    <openwebbeans.version>2.0.27</openwebbeans.version>
   </properties>
 
   <dependencies>
@@ -66,7 +66,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.8.2</version>
+      <version>5.9.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
